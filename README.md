@@ -10,5 +10,5 @@ MikroRoot:
 `Pass: ncss!@#2018`     
 `IP: 1.2.3.4`         
 
-# Author of explit    
+# Author of exploit    
 **https://github.com/BasuCert/WinboxPoC**   
