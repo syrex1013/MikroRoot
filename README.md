@@ -1,3 +1,5 @@
+<!-- GitAds-Verify: N8282P1UZO6YFBGQP324574DF5B6ADJH -->
+
 # MikroRoot
 Automated version of CVE-2018-14847. It will scrape shodan for vulnerable host and then try to exploit them.
 
